@@ -1,48 +1,50 @@
 package org.epamAssignment;
 import java.util.*;
+//Author :-  RohitKalluri
 public class App 
 {
     public static void main( String[] args )
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter number 1:");
-        int num1=sc.nextInt();
+        int x1=sc.nextInt();
         System.out.println("Enter number 2:");
-        int num2=sc.nextInt();
-        System.out.println("****************************CALCULATOR MENU*****************************");
+        int x2=sc.nextInt();
+        System.out.println("CALCULATOR MENU");
         System.out.println("press 0 to exit\npress 1 to add\npress 2 to subtract\npress 3 to multiply\npress 4 to divide\npress 5 to display result\n");
-        boolean exit=false;
-        int choice;
-        functions a=new functions();
-        int ans=-999;
+        boolean flag=false;
+        int input;
+        functions fun=new functions();
+        int res=-999;
         do{
-            System.out.println("Enter your choice:");
-            choice=sc.nextInt();
-            switch(choice)
+            System.out.println("Please Enter your choice:");
+            input=sc.nextInt();
+            switch(input)
             {
                 case 5:
-                    System.out.println("Result is: "+ans);
-                    ans=0;
+                    System.out.println("End Result is: "+res);
+                    res=0;
                     break;
                 case 1:
-                ans= a.add(num1,num2);
+                res= fun.add(x1,x2);
                  break;
                 case 2:
-                   ans= a.subtract(num1,num2);
+                   res= fun.subtract(x1,x2);
                     break;
                 case 3:
-                  ans=  a.multiply(num1,num2);
+                  res=  fun.multiply(x1,x2);
                     break;
                 case 4:
-                   ans= a.divide(num1,num2);
+                   res= fun.divide(x1,x2);
                     break;
                 case 0:
-                    exit=true;
+                    flag=true;
                     break;
                 default:
-                    System.out.println("Enter correct choice!");
+                    System.out.println("Please Enter correct choice!");
             }
-        }while(exit!=true);
-        System.out.println("Program ended!");
+        }while(flag!=true);
+        System.out.println("ended!");
+        sc.close();
     }
 }
